@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta charset="UTF-8">
+	<title>FintechLabs: Login</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans">
+    <link rel="stylesheet" type="text/css" href="/css/layout.css">
+
+
+
+</head>
+<body>
+	<div class="pageHeader container-fluid">
+		<div class="row-fluid">
+			<div class="col-md-8">
+				<a href="index.html"><img src="/images/FinTechLabs.io.png"></a>
+			</div>
+			<div id="userInfoDiv" class="col-md-4 text-right"></div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-md-6 col-md-offset-3 center-block center-text">
+				<h1 class="text-center">Login to the Deprecated OpenBanking Conformance Suite</h1>
+				<p id="error" class="bg-danger collapse">There was an error logging you in.</p>
+				<p id="logout" class="bg-info collapse">You have been logged out.</p>
+				<p class="text-center">
+					This server will be decommissioned in September 2019.
+				</p>
+				<p class="text-center">
+					This server only hosts deprecated pre-FAPI-alignment OpenBanking Security Profile tests. These should
+					only be run by ASPSPs that have not yet aligned to the FAPI-RW standard. All other ASPSPs should
+					run the FAPI-OB tests on the <a href="https://www.certification.openid.net/login.html">OpenID
+					Foundation Conformance server</a>.
+				</p>
+				<p class="text-center">
+					All other tests, including the FAPI-OB tests, are now hosted on the
+					<a href="https://www.certification.openid.net/login.html">OpenID Foundation Conformance server</a>
+					and the <a href="https://openid.net/certification/fapi_op_testing/">OpenID Foundation instructions on
+					testing</a> and <a href="http://openid.net/certification/fapi_op_submission/">submission of
+					certifications</a> should be followed.
+				</p>
+				<p class="text-center">
+					<a class="btn btn-danger btn-lg" href="/openid_connect_login?iss=https://accounts.google.com">Log in with Google</a>
+				</p>
+				<div>
+					<h4 class="lead text-center">Or use another OIDC provider</h4>
+					<form action="/openid_connect_login" method="post" id="login_form">
+						<div class="form-group">
+							<label for="identifier">User Name :</label> <input type="text" class="form-control" id="identifier" name="identifier" placeholder="user@example.com" />
+						</div>
+						<input type="submit" class="btn btn-default" value="Sign In" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <footer class="pageFooter">
+        <span class="muted">FintechLabs.io conformance suite</span>
+    </footer>
+
+    <script type="text/javascript">
+	    $(document).ready(function() {
+	        var urlParams = new URLSearchParams(window.location.search);
+
+	        var error = urlParams.get('error');
+	        var logout = urlParams.get('logout');
+
+	        if (error) {
+	        	   $('#error').show();
+	        }
+
+	        if (logout) {
+	        	   $('#logout').show();
+	        }
+	    });
+    </script>
+
+
+</body>
+</html>
