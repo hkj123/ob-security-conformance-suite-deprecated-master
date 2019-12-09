@@ -1,12 +1,12 @@
             <fieldset>
-                <legend>Browser Interaction:</legend>
+                <legend>浏览器交互跳转:</legend>
                 <dl class="dl-horizontal">
                     <% _.each(browser.urls, function(val) { %>
-                        <dt><button class="btn btn-primary visitBtn" data-url="<%- val %>">Visit <span class="glyphicon glyphicon-share-alt"></span></button></dt>
+                        <dt><button class="btn btn-primary visitBtn" data-url="<%- val %>">访问 <span class="glyphicon glyphicon-share-alt"></span></button></dt>
                         <dd><i><%- val %></i></dd>
                     <% }); %>
                     <% _.each(browser.visited, function(val) { %>
-                        <dt><button class="btn" disabled >Visited <span class="glyphicon glyphicon-share-alt"></span></button></dt>
+                        <dt><button class="btn" disabled >访问结束 <span class="glyphicon glyphicon-share-alt"></span></button></dt>
                         <dd class="wrapLongStrings"><i><%- val %></i></dd>
                     <% }); %>
 					<% _.each(browser.runners, function(val) { %>

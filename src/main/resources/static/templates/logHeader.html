@@ -58,23 +58,23 @@
                 </div>
 
                 <div class="col-md-2"> <!-- controls -->
-                    <button class="btn btn-default btn-block" id="reloadBtn"><span class="glyphicon glyphicon-retweet"></span> Repeat Test</button>
-                    <button class="btn btn-default btn-block" id="uploadBtn"><span class="glyphicon glyphicon-picture"></span> Upload Images <span class="badge" id="uploadCount"></span></button>
-                    <button class="btn btn-default btn-block" id="showConfigBtn"><span class="glyphicon glyphicon-wrench"></span> View Config</button>
-                    <button class="btn btn-default btn-block" id="downloadBtn"><span class="glyphicon glyphicon-save-file"></span> Download Logs</button>
-                    <button class="btn btn-default btn-block collapse" id="planBtn"><span class="glyphicon glyphicon-book"></span> Return to Plan</button>
-                    <button class="btn btn-default btn-block collapse" id="nextPlanBtn"><span class="glyphicon glyphicon-fast-forward"></span> Continue Plan</button>
+                    <button class="btn btn-default btn-block" id="reloadBtn"><span class="glyphicon glyphicon-retweet"></span> 重复测试</button>
+                    <button class="btn btn-default btn-block" id="uploadBtn"><span class="glyphicon glyphicon-picture"></span> 上传图片<span class="badge" id="uploadCount"></span></button>
+                    <button class="btn btn-default btn-block" id="showConfigBtn"><span class="glyphicon glyphicon-wrench"></span> 查看配置</button>
+                    <button class="btn btn-default btn-block" id="downloadBtn"><span class="glyphicon glyphicon-save-file"></span> 下载日志</button>
+                    <button class="btn btn-default btn-block collapse" id="planBtn"><span class="glyphicon glyphicon-book"></span> 返回测试计划</button>
+                    <button class="btn btn-default btn-block collapse" id="nextPlanBtn"><span class="glyphicon glyphicon-fast-forward"></span> 继续测试</button>
                 </div>
 
               </div>
             </div>
             <div class="container-fluid well well-sm collapse" id="runningTestInformation">
               <div id="runningTestError" class="collapse"></div>
-              <div class="alert alert-info" id="runningTestActive"><b>This test is currently running.</b> Values exported from the test are available below along with any URLs that need to be visited interactively.</div>
-              <div class="alert alert-warning" id="runningTestInactive"><b>This test is no longer running.</b> Values exported from the test are available for review below. This test will be automatically removed from the test runner, but the logs will remain at this URL.</div>
+              <div class="alert alert-info" id="runningTestActive"><b>测试案例正在运行.</b> </div>
+              <div class="alert alert-warning" id="runningTestInactive"><b>测试案例运行完毕.</b> 下面可以查看从测试导出的值。此测试将自动从测试运行程序中删除，但日志将保留在此URL中.</div>
               <div class="row-fluid">
                 <div id="runningTestSuccess" class="collapse col-md-12">
-                    <div class="alert alert-success"><strong>The test has completed successfully!</strong></div>
+                    <div class="alert alert-success"><strong>测试成功执行完毕.</strong></div>
                 </div>
               </div>
               <div class="row-fluid">
@@ -93,5 +93,5 @@
             </div>
             <div class="container alert alert-info alert-dismissible collapse" id="runningTestArchived">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <b>This test is no longer running.</b> This log has been archived and can be viewed or downloaded.
+              <b>测试案例运行完毕.</b> 此日志已存档，可以查看或下载.
             </div>

@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<title>FintechLabs: Conformance Suite</title>
+	<title>开放银行接口测试案例</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -72,7 +72,7 @@
 		<div class="modal-dialog modal-sm" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="loadingLabel">Loading...</h4>
+					<h4 class="modal-title" id="loadingLabel">载入中...</h4>
 				</div>
 				<div class="modal-body">
 					<div class="text-center">
@@ -90,14 +90,9 @@
 	<div class="container-fluid">
 		<div id="homePage">
 
-			<p class="text-center">
-				This server only hosts deprecated pre-FAPI-alignment OpenBanking Security Profile tests and will be decommissioned in September 2019. These tests should
-				only be run by ASPSPs that have not yet aligned to the FAPI-RW standard. All other ASPSPs should
-				run the FAPI-OB tests on the <a href="https://www.certification.openid.net/login.html">OpenID
-				Foundation Conformance server</a> and follow the <a href="https://openid.net/certification/fapi_op_testing/">OpenID
-				Foundation instructions on testing</a> and <a href="http://openid.net/certification/fapi_op_submission/">submission of
-				certifications</a>.
-			</p>
+			<!--<p class="text-center">-->
+				<!--开放银行接口测试案例</a>.-->
+			<!--</p>-->
 
 			<!-- render available test launch options here -->
             <div class="row">
@@ -125,7 +120,7 @@
 			<div class="row">
 				<div class="col-md-12">
 
-					<h3>Configure Test</h3>
+					<h3>参数配置</h3>
 
 					<ul class="nav nav-tabs">
 						<li class="active"><a data-toggle="tab" id="tab-form-elements" href="#formInput">Form</a></li>
@@ -138,7 +133,7 @@
 
 							<div class="config-form-container">
 
-								<h3 class="config-form-container-header">Test Information</h3>
+								<h3 class="config-form-container-header">测试信息</h3>
 
 								<div class="row config-form-element-container">
 									<div class="col-md-2 key">alias</div>
@@ -167,7 +162,7 @@
 							</div>
 
 							<div class="config-form-container">
-								<h3 class="config-form-container-header">Server</h3>
+								<h3 class="config-form-container-header">认证服务</h3>
 								<div class="row config-form-element-container">
 									<div class="col-md-2 key">discoveryUrl</div>
 									<div class="col-md-10">
@@ -199,7 +194,7 @@
 
 
 							<div class="config-form-container">
-								<h3 class="config-form-container-header">Client</h3>
+								<h3 class="config-form-container-header">Client(一)配置</h3>
 								<div class="row config-form-element-container">
 									<div class="col-md-2 key">client_id</div>
 									<div class="col-md-10">
@@ -262,7 +257,7 @@
 
 
 							<div class="config-form-container">
-								<h3 class="config-form-container-header">TLS certificates for client (used to make MTLS connections)</h3>
+								<h3 class="config-form-container-header">Client(一)安全证书配置</h3>
 								<div class="row config-form-element-container">
 									<div class="col-md-2 key">mtls.cert</div>
 									<div class="col-md-10">
@@ -286,7 +281,7 @@
 							</div>
 
 							<div class="config-form-container">
-								<h3 class="config-form-container-header">Second client</h3>
+								<h3 class="config-form-container-header">Client(二)配置</h3>
 								<div class="row config-form-element-container">
 									<div class="col-md-2 key">client_id</div>
 									<div class="col-md-10">
@@ -320,7 +315,7 @@
 							</div>
 
 							<div class="config-form-container">
-								<h3 class="config-form-container-header">Second client TLS certificates</h3>
+								<h3 class="config-form-container-header">Client(二)安全证书配置</h3>
 								<div class="row config-form-element-container">
 									<div class="col-md-2 key">mtls2.cert</div>
 									<div class="col-md-10">
@@ -407,26 +402,26 @@
 				<div class="well col-md-6 col-md-offset-3">
 				    <button class="btn btn-block collapse">Fake Button for spacing, ignore</button>
 					<button class="btn btn-primary btn-block btn-lg" id="createTestBtn" disabled="">
-						<span class="glyphicon glyphicon-flag"></span> Launch Test
+						<span class="glyphicon glyphicon-flag"></span> 执行测试
 					</button>
                     <button class="btn btn-primary btn-block btn-lg collapse" id="createPlanBtn" disabled="">
-                        <span class="glyphicon glyphicon-flag"></span> Start Test Plan
+                        <span class="glyphicon glyphicon-flag"></span> 执行测试计划
                     </button>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-md-12">
-					<h3>Running tests</h3>
+					<h3>正在执行的案例</h3>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-2">
 					<button class="btn btn-default btn-block" id="refresh">
-						<span class="glyphicon glyphicon-refresh"></span> Refresh
+						<span class="glyphicon glyphicon-refresh"></span> 刷新
 					</button>
-                    <a href="logs.html" class="btn btn-info btn-block"><span class="glyphicon glyphicon-duplicate"></span> View all available logs</a>
-                    <a href="plans.html" class="btn btn-info btn-block"><span class="glyphicon glyphicon-book"></span> View all available plans</a>
+                    <a href="logs.html" class="btn btn-info btn-block"><span class="glyphicon glyphicon-duplicate"></span> 查看已执行案例日志</a>
+                    <a href="plans.html" class="btn btn-info btn-block"><span class="glyphicon glyphicon-book"></span> 查看已执行案例</a>
 				</div>
 
 				<div class="col-md-10" id="running-tests">
@@ -916,7 +911,7 @@
 	</script>
 
 	<footer class="pageFooter">
-		<span class="muted">FintechLabs.io conformance suite</span>
+		<span class="muted">开放银行接口测试案例</span>
 		<div class="serverInfo"></div>
 	</footer>
 </body>
